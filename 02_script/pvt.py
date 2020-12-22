@@ -6,7 +6,7 @@
 #
 # Author: Julius Welzel (Neurogeriatrie, UKSH Kiel,University of Kiel)
 # Contact: j.welzel@neurologie.uni-kiel.de
-# Version: 1.0 // setting up default (15.07.2020)
+# Version: 1.0 // setting up default (15.12.2020)
 # -*- coding: utf-8 -*-
 
 from psychopy import locale_setup, visual, core, event
@@ -21,7 +21,7 @@ s_info      = StreamInfo(name='PsychoPyTrigger', type = 'Markers', channel_count
 
 trig_out    = StreamOutlet(s_info)
 
-input('Start LabRecorder')
+input('Start LabRecorder and than press enter')
 
 
 # Set window and remove mouse during experiment:
@@ -69,7 +69,8 @@ while jit_list.sum() < 300:
     jit_list = np.random.randint(20,100,50)/10
 
 
-resp_key = event.getKeys()
+resp_key    = event.getKeys()
+resp_mouse  = event.Mouse()
 
 # INTRO
 intro_text.draw()
@@ -104,14 +105,24 @@ for i in range(8):
 
     all_rt = []
     trig_out.push_sample(['Trial start'])
+
+    # clear events from keyboard and mouse
     event.clearEvents()
+    resp_mouse.clickReset(buttons=(0, 1, 2))
 
     while bp_space:
+        # check for mouse presses
+        buttons, times = resp_mouse.getPressed(getTime=True)
 
         tmp_t = int(round((core.getTime() - timer)*1000,0))
         ms_text.text = (str(tmp_t))
         ms_text.draw()
         win.flip()
+
+        # check mouse button
+        if times[0] != 0.0:
+            bp_space = False
+            trig_out.push_sample(['BP'])
 
         for key in event.getKeys():
             if key in ['space']:
@@ -122,6 +133,8 @@ for i in range(8):
                 trig_out.push_sample(['Experiment stopped'])
                 win.close()
                 core.quit()
+
+
 
     all_rt.append(tmp_t)
     core.wait(dur_hit)
@@ -167,14 +180,24 @@ for i in range(50):
 
     all_rt = []
     trig_out.push_sample(['Trial start'])
+
+    # clear events from keyboard and mouse
     event.clearEvents()
+    resp_mouse.clickReset(buttons=(0, 1, 2))
 
     while bp_space:
+        # check for mouse presses
+        buttons, times = resp_mouse.getPressed(getTime=True)
 
         tmp_t = int(round((core.getTime() - timer)*1000,0))
         ms_text.text = (str(tmp_t))
         ms_text.draw()
         win.flip()
+
+        # check mouse button
+        if times[0] != 0.0:
+            bp_space = False
+            trig_out.push_sample(['BP'])
 
         for key in event.getKeys():
             if key in ['space']:

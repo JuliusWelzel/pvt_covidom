@@ -1,23 +1,28 @@
-# Features of coffee taste
-A project on the perceived taste in espresso by [FilterFreunde](https://www.filterfreunde.com/).
+# PVT task
+Python based PVT task for the Covidom project by [Julius Welzel](j.welzel@neurologie.uni-kiel.de).
 
 ## Project description
-Ratings  of quality measures at a 10 point scale of 1312 different brands of coffee beans. Additional info about preperation procedures and oringin are provided. Data is from the [coffee quality database (CQD)](https://github.com/jldbc/coffee-quality-database).<br>
+This repo contains all software to run the PVT task as done for the covidom project in Kiel, December 2020. It contains one training block of 8 trails and one experimental block of 5 minutes.<br>
 
-## Quality Measures
-Aroma, Flavor, Aftertaste,  Acidity,  Body,  Balance,  Uniformity,  Cup Cleanliness,  Sweetness,  Moisture,  Defects
+## Installation guide
+1. clone this repo to locally
+2. install python via [anaconda distribution](https://www.anaconda.com/products/individual)
+3. run anaconda prompt as admin
+4. install modules via pip (psychopy, numpy, time, pylsl)
+
+## Run PVT 
+1. run PVT.bat
+2. open anaconda prompt and run "python pvt.py" in local directory
+3. enter participant id in Lab recorder and start recording
+4. end recording
 
 ## Author
 Developed by Julius Welzel, University of Kiel, (j.welzel@neurologie.uni-kiel.de) <br>
 
-
 ## Project structure
-* 01_data *(contains raw data and derivatives)*
-  * 00_raw   
-  * 01_prep
-* 02_scripts *(data analysis script projecting to 02_data)*
-* 03_plots *(plots derived from 03_scripts)*
-* 99_software *(toolboxes and additional functions)*
+* 02_scripts *(experimental script to run pvt in python and first MatLab script for analysis results)*
+* 03_data *(contains raw and prep data)*
+* 101_software *(toolboxes and additional functions)*
 
 ## Versioning
 *Version 1.0//15.12.2020*
