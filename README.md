@@ -8,9 +8,9 @@ This repo contains all software to run the PVT task as done for the covidom proj
 1. clone this repo to locally
 2. install python via [anaconda distribution](https://www.anaconda.com/products/individual)
 3. run anaconda prompt as admin
-4. install modules via pip (psychopy, numpy, time, pylsl)
+4. install modules via pip (psychopy, numpy, pylsl)
 
-## Run PVT 
+## Run PVT
 1. run PVT.bat
 2. open anaconda prompt and run "python pvt.py" in local directory
 3. enter participant id in Lab recorder and start recording

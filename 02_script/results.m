@@ -40,20 +40,28 @@ for s = 1:numel(nms_SUBJ)
    RT = [];
    c = 1;
 
-   for i = 1:numel(idx_bps)
+   for i = 9:numel(idx_bps)
 
        if idx_bps(i)-idx_ts(i) ~= 1; continue;end
 
        RT(c)    = pvt.time_stamps(idx_bps(i))-pvt.time_stamps(idx_ts(i));
-       if RT(c) > 3; break;end
        c        = c+1;
 
    end
 
+   figure
+   subplot(1,2,1)
    singleBoxplot({RT})
    tune_BP([87, 95, 207]/255)
         ylabel 'RT [s]'
         xticklabels 'PVT'
+        
+    subplot(1,2,2)
+    plot(RT,'.','Color',[.8 .8 .8],'MarkerSize',15)
+    hline(mean(RT),'k--')
+        ylabel 'RT [s]'
+        xlabel 'Trial number'
+        box off
 
     save_fig(gcf,PATHOUT,[nms_SUBJ{s} '_pvt'])
 
