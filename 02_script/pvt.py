@@ -25,7 +25,7 @@ input('Start LabRecorder and than press enter')
 
 
 # Set window and remove mouse during experiment:
-win_size = (1920,1080)
+win_size = (1920,1200)
 win = visual.Window(size = win_size, fullscr = True, allowGUI = False,
                     monitor='testMonitor', units='norm',color = [-1,-1,-1])
 
