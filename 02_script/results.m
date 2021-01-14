@@ -62,6 +62,7 @@ for s = 1:numel(nms_SUBJ)
         ylabel 'RT [s]'
         xlabel 'Trial number'
         box off
+    lsline
 
     save_fig(gcf,PATHOUT,[nms_SUBJ{s} '_pvt'])
 
