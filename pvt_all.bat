@@ -1,2 +1,2 @@
-start LabRecorder.bat 
-start py_pvt.bat \k
+start 02_script\LabRecorder.bat
+start 02_script\py_pvt.bat \k

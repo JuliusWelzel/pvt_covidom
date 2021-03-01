@@ -11,10 +11,15 @@ This repo contains all software to run the PVT task as done for the covidom proj
 4. install modules via pip (psychopy, numpy, pylsl)
 
 ## Run PVT
-1. run PVT.bat
+1. run pvt_standalone.bat
 2. open anaconda prompt and run "python pvt.py" in local directory
 3. enter participant id in Lab recorder and start recording
 4. end recording
+
+## Run PVT form single batch
+1. run pvt_all.bat
+2. enter participant id in Lab recorder and start recording
+3. end recording
 
 ## Author
 Developed by Julius Welzel, University of Kiel, (j.welzel@neurologie.uni-kiel.de) <br>
@@ -25,4 +30,4 @@ Developed by Julius Welzel, University of Kiel, (j.welzel@neurologie.uni-kiel.de
 * 101_software *(toolboxes and additional functions)*
 
 ## Versioning
-*Version 1.0//15.12.2020*
+*Version 1.1//01.03.2020* - Update to run experiment from single batch
