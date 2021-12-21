@@ -16,7 +16,7 @@ This repo contains all software to run the PVT task as done for the covidom proj
 3. enter participant id in Lab recorder and start recording
 4. end recording
 
-## Run PVT form single batch
+## Run PVT from single batch
 1. run pvt_all.bat
 2. enter participant id in Lab recorder and start recording
 3. end recording
