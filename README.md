@@ -10,6 +10,12 @@ This repo contains all software to run the PVT task as done for the covidom proj
 3. run anaconda prompt as admin
 4. install modules via pip (psychopy, numpy, pylsl)
 
+If you encounter this error in Windows: "error: command 'swig.exe' failed: No such file or directory", you should install pywinhook. This can be done in the anaconda shell by typing:
+```
+conda install -c conda-forge pywinhook
+```
+Then you can re-run the failed command.
+
 ## Run PVT
 1. run pvt_standalone.bat
 2. open anaconda prompt and run "python pvt.py" in local directory
@@ -30,4 +36,4 @@ Developed by Julius Welzel, University of Kiel, (j.welzel@neurologie.uni-kiel.de
 * 101_software *(toolboxes and additional functions)*
 
 ## Versioning
-*Version 1.1//01.03.2020* - Update to run experiment from single batch
+*Version 1.1.1//15.06.2022* - Minor bug fix in installation related to pywinhook
